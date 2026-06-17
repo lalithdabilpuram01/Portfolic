@@ -8,6 +8,7 @@ import type { PortfolioData, Skill } from '@/types/portfolio'
 import ContactForm from '@/components/themes/shared/ContactForm'
 import ResumeButton from '@/components/themes/shared/ResumeButton'
 import { externalUrl } from '@/lib/url'
+import { APP_NAME } from '@/lib/config'
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -418,7 +419,7 @@ export default function PortfolioLayout({ profile, projects, skills, experience,
           </motion.section>
 
           <footer className="text-sm text-slate-600 pt-8 border-t border-white/5">
-            © {new Date().getFullYear()} {profile.full_name}. Built with PortfolioBuilder.
+            © {new Date().getFullYear()} {profile.full_name}. Built with {APP_NAME}.
           </footer>
         </div>
       </div>

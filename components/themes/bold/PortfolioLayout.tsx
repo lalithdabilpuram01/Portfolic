@@ -8,6 +8,7 @@ import type { PortfolioData, Skill, SkillLevel } from '@/types/portfolio'
 import ContactForm from '@/components/themes/shared/ContactForm'
 import ResumeButton from '@/components/themes/shared/ResumeButton'
 import { externalUrl } from '@/lib/url'
+import { APP_NAME } from '@/lib/config'
 
 const levelWidth: Record<SkillLevel, string> = {
   beginner: '35%',
@@ -461,7 +462,7 @@ export default function PortfolioLayout({ profile, projects, skills, experience,
 
         <footer className="text-center text-slate-600 text-sm flex items-center justify-center gap-2">
           {profile.show_email && <Mail size={14} />}
-          © {new Date().getFullYear()} {profile.full_name}. Crafted with PortfolioBuilder.
+          © {new Date().getFullYear()} {profile.full_name}. Crafted with {APP_NAME}.
         </footer>
       </div>
     </main>

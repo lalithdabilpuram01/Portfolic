@@ -51,8 +51,8 @@ Pick a theme, fill in your details, and your portfolio goes live at `yoursite.co
 ### 1. Clone & install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/portfolio-website-builder.git
-cd portfolio-website-builder
+git clone https://github.com/lalithdabilpuram01/portfolic.git
+cd portfolic
 npm install
 ```
 

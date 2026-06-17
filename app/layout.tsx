@@ -1,9 +1,10 @@
 import type { Metadata } from 'next'
 import { Toaster } from 'react-hot-toast'
 import './globals.css'
+import { APP_NAME } from '@/lib/config'
 
 export const metadata: Metadata = {
-  title: 'Portfolio Builder',
+  title: APP_NAME,
   description: 'Build and share your professional portfolio',
 }
 

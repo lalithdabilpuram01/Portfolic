@@ -1,6 +1,7 @@
 import { Suspense } from 'react'
 import Link from 'next/link'
 import LoginForm from '@/components/auth/LoginForm'
+import { APP_NAME } from '@/lib/config'
 
 export default function LoginPage() {
   return (
@@ -18,7 +19,7 @@ export default function LoginPage() {
           <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-white">
             P
           </div>
-          <span className="text-xl font-semibold text-white">PortfolioBuilder</span>
+          <span className="text-xl font-semibold text-white">{APP_NAME}</span>
         </Link>
         <div
           className="rounded-2xl p-8 border border-white/10"

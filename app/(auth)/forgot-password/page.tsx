@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import ForgotPasswordForm from '@/components/auth/ForgotPasswordForm'
+import { APP_NAME } from '@/lib/config'
 
 export default function ForgotPasswordPage() {
   return (
@@ -11,7 +12,7 @@ export default function ForgotPasswordPage() {
       <div className="relative z-10 w-full max-w-md">
         <Link href="/" className="flex items-center justify-center gap-2 mb-8">
           <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center font-bold text-white">P</div>
-          <span className="text-xl font-semibold text-white">PortfolioBuilder</span>
+          <span className="text-xl font-semibold text-white">{APP_NAME}</span>
         </Link>
         <div className="rounded-2xl p-8 border border-white/10" style={{ background: 'rgba(15,23,42,0.7)', backdropFilter: 'blur(12px)' }}>
           <h1 className="text-2xl font-bold text-white mb-1">Forgot password?</h1>

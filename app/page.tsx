@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { createServiceClient } from '@/lib/supabase/server'
 import type { SiteSettings } from '@/types/portfolio'
+import { APP_NAME } from '@/lib/config'
 
 const features = [
   {
@@ -50,7 +51,7 @@ export default async function LandingPage() {
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-sm font-bold">
             P
           </div>
-          <span className="text-lg font-semibold tracking-tight">PortfolioBuilder</span>
+          <span className="text-lg font-semibold tracking-tight">{APP_NAME}</span>
         </div>
         <div className="flex items-center gap-3">
           <Link
@@ -87,7 +88,7 @@ export default async function LandingPage() {
         <p className="text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
           Build a stunning professional portfolio with dynamic themes, interactive animations,
           and full control over your data. Share it at{' '}
-          <span className="text-indigo-400 font-mono">sitename.com/username</span>.
+          <span className="text-indigo-400 font-mono">portfolic.vercel.app/username</span>.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -123,16 +124,16 @@ export default async function LandingPage() {
             <div className="w-3 h-3 rounded-full bg-red-500/70" />
             <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
             <div className="w-3 h-3 rounded-full bg-green-500/70" />
-            <div className="mx-auto text-xs text-slate-500 font-mono">yoursite.com/username</div>
+            <div className="mx-auto text-xs text-slate-500 font-mono">portfolic.vercel.app/username</div>
           </div>
           <div className="p-8 flex flex-col md:flex-row gap-8">
             <div className="flex-1">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-2xl font-bold animate-pulse-glow">
-                  LD
+                  YN
                 </div>
                 <div>
-                  <div className="text-xl font-bold text-white">Lalith Dabilpuram</div>
+                  <div className="text-xl font-bold text-white">Your Name</div>
                   <div className="text-indigo-400 text-sm">AI Full Stack Engineer · San Francisco</div>
                 </div>
               </div>
@@ -237,7 +238,7 @@ export default async function LandingPage() {
       </section>
 
       <footer className="relative z-10 text-center text-slate-600 text-sm pb-8">
-        © {new Date().getFullYear()} PortfolioBuilder. Built with Next.js + Supabase.
+        © {new Date().getFullYear()} {APP_NAME}. Built with Next.js + Supabase.
       </footer>
     </div>
   )

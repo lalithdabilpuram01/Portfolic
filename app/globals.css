@@ -83,6 +83,16 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Render native dropdowns and date/month pickers in dark mode so they match
+   the dark dashboard instead of showing the default white OS styling. */
+select,
+input[type="date"],
+input[type="month"],
+input[type="datetime-local"],
+input[type="time"] {
+  color-scheme: dark;
+}
+
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0f172a; }
 ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 3px; }

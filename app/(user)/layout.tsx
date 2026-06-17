@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import Sidebar from '@/components/user-dashboard/Sidebar'
+import BfcacheGuard from '@/components/BfcacheGuard'
 
 export default async function UserLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient()
@@ -22,6 +23,7 @@ export default async function UserLayout({ children }: { children: React.ReactNo
 
   return (
     <div className="min-h-screen bg-[#050a14] flex">
+      <BfcacheGuard />
       <Sidebar username={profile.username} />
       <main className="flex-1 min-w-0">{children}</main>
     </div>

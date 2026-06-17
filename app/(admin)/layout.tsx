@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import AdminSidebar from '@/components/admin-dashboard/Sidebar'
+import BfcacheGuard from '@/components/BfcacheGuard'
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const supabase = await createClient()
@@ -26,6 +27,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
   return (
     <div className="min-h-screen bg-[#050a14] flex">
+      <BfcacheGuard />
       <AdminSidebar pendingCount={pendingCount ?? 0} />
       <main className="flex-1 min-w-0">{children}</main>
     </div>

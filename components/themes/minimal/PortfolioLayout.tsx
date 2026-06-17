@@ -6,6 +6,7 @@ import { Github, Linkedin, Twitter } from '@/components/icons/Brand'
 import type { PortfolioData, Skill } from '@/types/portfolio'
 import ContactForm from '@/components/themes/shared/ContactForm'
 import ResumeButton from '@/components/themes/shared/ResumeButton'
+import { externalUrl } from '@/lib/url'
 
 function groupSkills(skills: Skill[]) {
   const map: Record<string, Skill[]> = {}
@@ -67,7 +68,7 @@ export default function PortfolioLayout({ profile, projects, skills, experience,
               return (
                 <a
                   key={s.label}
-                  href={s.url!}
+                  href={externalUrl(s.url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex items-center gap-1.5 text-sm text-slate-600 hover:text-slate-900 transition-colors"
@@ -161,7 +162,7 @@ export default function PortfolioLayout({ profile, projects, skills, experience,
                     <div className="text-slate-500 text-sm font-light">{c.issuer}{c.issued_date ? ` · ${c.issued_date.slice(0, 7)}` : ''}</div>
                   </div>
                   {c.credential_url && (
-                    <a href={c.credential_url} target="_blank" rel="noopener noreferrer"
+                    <a href={externalUrl(c.credential_url)} target="_blank" rel="noopener noreferrer"
                       className="text-slate-400 hover:text-slate-900 transition-colors shrink-0">
                       <ExternalLink size={15} />
                     </a>
@@ -215,7 +216,7 @@ export default function PortfolioLayout({ profile, projects, skills, experience,
                   </div>
                 )
                 return href ? (
-                  <a key={p.id} href={href} target="_blank" rel="noopener noreferrer" className="block">
+                  <a key={p.id} href={externalUrl(href)} target="_blank" rel="noopener noreferrer" className="block">
                     {content}
                   </a>
                 ) : (

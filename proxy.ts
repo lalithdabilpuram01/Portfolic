@@ -59,6 +59,10 @@ export async function proxy(request: NextRequest) {
     }
   }
 
+  // Opt protected pages out of the browser's back-forward cache so pressing
+  // "back" after logout cannot restore the rendered dashboard/admin from cache.
+  supabaseResponse.headers.set('Cache-Control', 'no-store, max-age=0, must-revalidate')
+
   return supabaseResponse
 }
 

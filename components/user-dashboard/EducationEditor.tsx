@@ -53,10 +53,12 @@ export default function EducationEditor({ userId, initial }: Props) {
     <div className="space-y-3">
       {items.map((item) => (
         <div key={item.id} className="rounded-xl border border-white/10 overflow-hidden" style={{ background: 'rgba(255,255,255,0.03)' }}>
-          <button
-            type="button"
+          <div
+            role="button"
+            tabIndex={0}
             onClick={() => setExpanded(expanded === item.id ? null : item.id)}
-            className="w-full flex items-center justify-between px-5 py-4 text-left"
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setExpanded(expanded === item.id ? null : item.id) }}
+            className="w-full flex items-center justify-between px-5 py-4 text-left cursor-pointer"
           >
             <div>
               <div className="font-medium text-white">{item.degree || 'New education'}</div>
@@ -68,7 +70,7 @@ export default function EducationEditor({ userId, initial }: Props) {
               </button>
               {expanded === item.id ? <ChevronUp size={16} className="text-slate-400" /> : <ChevronDown size={16} className="text-slate-400" />}
             </div>
-          </button>
+          </div>
 
           {expanded === item.id && (
             <div className="px-5 pb-5 space-y-4 border-t border-white/5 pt-4">

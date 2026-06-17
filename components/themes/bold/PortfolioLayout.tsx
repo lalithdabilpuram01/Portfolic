@@ -7,6 +7,7 @@ import { Github, Linkedin, Twitter } from '@/components/icons/Brand'
 import type { PortfolioData, Skill, SkillLevel } from '@/types/portfolio'
 import ContactForm from '@/components/themes/shared/ContactForm'
 import ResumeButton from '@/components/themes/shared/ResumeButton'
+import { externalUrl } from '@/lib/url'
 
 const levelWidth: Record<SkillLevel, string> = {
   beginner: '35%',
@@ -139,7 +140,7 @@ export default function PortfolioLayout({ profile, projects, skills, experience,
               return (
                 <a
                   key={s.label}
-                  href={s.url!}
+                  href={externalUrl(s.url)}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
@@ -298,7 +299,7 @@ export default function PortfolioLayout({ profile, projects, skills, experience,
                     <div className="text-slate-400 text-sm">{c.issuer}{c.issued_date ? ` · ${c.issued_date.slice(0, 7)}` : ''}</div>
                   </div>
                   {c.credential_url && (
-                    <a href={c.credential_url} target="_blank" rel="noopener noreferrer"
+                    <a href={externalUrl(c.credential_url)} target="_blank" rel="noopener noreferrer"
                       className="text-slate-500 hover:text-white transition-colors shrink-0">
                       <ExternalLink size={16} />
                     </a>
@@ -345,7 +346,7 @@ export default function PortfolioLayout({ profile, projects, skills, experience,
                       <div className="flex gap-2">
                         {p.github_url && (
                           <a
-                            href={p.github_url}
+                            href={externalUrl(p.github_url)}
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="GitHub"
@@ -356,7 +357,7 @@ export default function PortfolioLayout({ profile, projects, skills, experience,
                         )}
                         {p.project_url && (
                           <a
-                            href={p.project_url}
+                            href={externalUrl(p.project_url)}
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Live"

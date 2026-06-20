@@ -1,6 +1,7 @@
 import { createServiceClient } from '@/lib/supabase/server'
 import SettingsPanel from '@/components/admin-dashboard/SettingsPanel'
 import LandingPageSettings from '@/components/admin-dashboard/LandingPageSettings'
+import AnnouncementSettings from '@/components/admin-dashboard/AnnouncementSettings'
 import type { Theme, SiteSettings } from '@/types/portfolio'
 
 export const dynamic = 'force-dynamic'
@@ -19,6 +20,7 @@ export default async function AdminSettingsPage() {
         <p className="text-slate-400 text-sm mt-1">Manage themes, landing page, and platform data.</p>
       </div>
       <div className="space-y-6">
+        <AnnouncementSettings initial={(siteSettings ?? null) as SiteSettings | null} />
         <LandingPageSettings initial={(siteSettings ?? null) as SiteSettings | null} />
         <SettingsPanel initialThemes={(themes ?? []) as Theme[]} />
       </div>

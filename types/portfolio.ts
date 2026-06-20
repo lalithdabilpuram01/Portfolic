@@ -107,6 +107,8 @@ export interface SiteSettings {
   creator_tagline: string | null
   creator_bio: string | null
   creator_picture_url: string | null
+  announcement_message: string | null
+  announcement_visible: boolean
   updated_at: string
 }
 
